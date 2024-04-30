@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        /* CSS styles (unchanged) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .feature {
+            margin-bottom: 20px;
+        }
+        .feature h2 {
+            color: #555;
+        }
+        .feature ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feature ul li {
+            margin-bottom: 10px;
+        }
+        /* Chatbot styles */
+        .chat-container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+        .user-message, .bot-message {
+            padding: 5px 10px;
+            margin-bottom: 5px;
+        }
+        .user-message {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #e5e5e5;
+            border-radius: 5px;
+        }
+        /* Input styles */
+        input[type="text"] {
+            width: calc(100% - 70px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 60px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        
+        <!-- Chatbot Section -->
+        <div class="feature">
+            <h2>Chatbot to Communicate with Teachers</h2>
+            <div class="chat-container" id="chatContainer">
+                <!-- Chat messages will be displayed here -->
+            </div>
+            <form id="chatForm">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <input type="submit" value="Send">
+            </form>
+        </div>
+        
+        <!-- Other Features (Unchanged) -->
+        <div class="feature">
+            <h2>Post Learning Requirements and Preferences</h2>
+            <!-- Learning requirements form code here -->
+        </div>
+        <!-- Include other features here -->
+    </div>
+
+    <!-- JavaScript (for chat functionality) -->
+    <script>
+        document.getElementById("chatForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            const messageInput = document.getElementById("messageInput");
+            const message = messageInput.value;
+            if (message.trim() !== "") {
+                displayUserMessage(message);
+                // Here you can add JavaScript logic to handle message processing (e.g., send message to backend or trigger appropriate action)
+                // For demonstration purposes, let's simulate a bot response after a short delay
+                setTimeout(() => {
+                    displayBotMessage("Hello! How can I assist you?");
+                }, 500);
+                messageInput.value = ""; // Clear the input field
+            }
+        });
+
+        function displayUserMessage(message) {
+            const chatContainer = document.getElementById("chatContainer");
+            const userMessageElement = document.createElement("div");
+            userMessageElement.className = "user-message";
+            userMessageElement.textContent = message;
+            chatContainer.appendChild(userMessageElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to bottom
+        }
+
+        function displayBotMessage(message) {
+            const chatContainer = document.getElementById("chatContainer");
+            const botMessageElement = document.createElement("div");
+            botMessageElement.className = "bot-message";
+            botMessageElement.textContent = message;
+            chatContainer.appendChild(botMessageElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to bottom
+        }
+    </script>
+</body>
+</html>

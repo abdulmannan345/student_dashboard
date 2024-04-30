@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        /* CSS styles (unchanged) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .feature {
+            margin-bottom: 20px;
+        }
+        .feature h2 {
+            color: #555;
+        }
+        .feature ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feature ul li {
+            margin-bottom: 10px;
+        }
+        /* Rating styles */
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            font-size: 24px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .rating input:checked ~ label {
+            color: #ffcc00;
+        }
+        /* Button styles (unchanged) */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        
+        <!-- Rating Section -->
+        <div class="feature">
+            <h2>Teacher Rating</h2>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">&#9733;</label>
+            </div>
+            <button onclick="submitRating()">Submit Rating</button>
+        </div>
+        
+        <!-- Other Features (Unchanged) -->
+        <div class="feature">
+            <h2>View Teacher Profiles</h2>
+            <ul>
+                <li>Ability to send requests to specific teachers</li>
+            </ul>
+        </div>
+        <!-- Include other features here -->
+    </div>
+
+    <!-- JavaScript (for rating submission) -->
+    <script>
+        function submitRating() {
+            const rating = document.querySelector('input[name="rating"]:checked');
+            if (rating) {
+                alert("Thank you for your rating: " + rating.value);
+            } else {
+                alert("Please select a rating.");
+            }
+        }
+    </script>
+</body>
+</html>

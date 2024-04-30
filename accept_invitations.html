@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        /* CSS styles (unchanged) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .invitation {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .invitation-content {
+            margin-bottom: 10px;
+        }
+        .accept-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .accept-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        
+        <!-- Invitations Section -->
+        <div class="invitation">
+            <div class="invitation-content">
+                <h3>Learning Assessment Session Invitation</h3>
+                <p>Teacher: John Doe</p>
+                <p>Date: April 30, 2024</p>
+                <p>Time: 10:00 AM - 12:00 PM</p>
+            </div>
+            <button class="accept-button" onclick="acceptInvitation()">Accept</button>
+        </div>
+        
+        <!-- Other Features (Unchanged) -->
+        <!-- Include other features here -->
+    </div>
+
+    <!-- JavaScript (for accepting invitations) -->
+    <script>
+        function acceptInvitation() {
+            // Here you can add JavaScript logic to handle accepting the invitation
+            alert("Invitation accepted!");
+            // Optionally, you can remove the invitation from the UI after it's accepted
+            // For example:
+            // var invitationElement = document.querySelector('.invitation');
+            // invitationElement.parentNode.removeChild(invitationElement);
+        }
+    </script>
+</body>
+</html>

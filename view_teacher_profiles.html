@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        /* CSS styles (unchanged) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .feature {
+            margin-bottom: 20px;
+        }
+        .feature h2 {
+            color: #555;
+        }
+        .feature ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .feature ul li {
+            margin-bottom: 10px;
+        }
+        /* Form styles (unchanged) */
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* Teacher profiles styles */
+        .teacher-profile {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .teacher-profile h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        
+        <!-- Teacher Profiles -->
+        <div class="feature">
+            <h2>View Teacher Profiles</h2>
+            <div class="teacher-profile">
+                <h3>Teacher Name 1</h3>
+                <p>Teaching Subject: Mathematics</p>
+                <button onclick="sendRequest('Teacher Name 1')">Send Request</button>
+            </div>
+            <div class="teacher-profile">
+                <h3>Teacher Name 2</h3>
+                <p>Teaching Subject: Science</p>
+                <button onclick="sendRequest('Teacher Name 2')">Send Request</button>
+            </div>
+            <!-- Add more teacher profiles here -->
+        </div>
+        
+        <!-- Manage Profile Form (unchanged) -->
+        <div class="feature">
+            <h2>Manage Profile</h2>
+            <form id="profileForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" value="Update Profile">
+            </form>
+        </div>
+        <!-- Include other features here -->
+    </div>
+
+    <!-- JavaScript (for sending requests) -->
+    <script>
+        function sendRequest(teacherName) {
+            // Here you can add JavaScript logic to send a request to the specific teacher
+            alert("Request sent to " + teacherName);
+        }
+    </script>
+</body>
+</html>

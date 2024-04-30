@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        /* CSS styles (unchanged) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .feature {
+            margin-bottom: 20px;
+        }
+        .feature h2 {
+            color: #555;
+        }
+        /* Form styles (unchanged) */
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+            min-height: 100px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        
+        <!-- Report Issues Form -->
+        <div class="feature">
+            <h2>Report Issues or Problems to Admin</h2>
+            <form id="reportForm">
+                <label for="issue">Issue Description:</label>
+                <textarea id="issue" name="issue" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <!-- Other Features (Unchanged) -->
+        <div class="feature">
+            <h2>View Reports and Track Progress</h2>
+            <!-- Reports and progress section code here -->
+        </div>
+        <!-- Include other features here -->
+    </div>
+
+    <!-- JavaScript (for form submission) -->
+    <script>
+        document.getElementById("reportForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            const issue = document.getElementById("issue").value;
+            if (issue.trim() !== "") {
+                // Here you can add JavaScript logic to handle issue submission (e.g., send issue to backend)
+                alert("Issue reported successfully!");
+                document.getElementById("issue").value = ""; // Clear the textarea
+            } else {
+                alert("Please provide a description of the issue.");
+            }
+        });
+    </script>
+</body>
+</html>
